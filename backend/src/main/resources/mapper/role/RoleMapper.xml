@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jeongseok.demoweb.dao.role.RoleDao">
+	<resultMap id="roleMap" type="com.jeongseok.demoweb.vo.role.RoleVo">
+		<result property="roleId" column="role_id"/>
+		<result property="roleName" column="role_name"/>
+		<result property="useYn" column="use_yn"/>
+		<result property="roleDesc" column="role_desc"/>
+		<result property="sysCretDate" column="sys_cret_date"/>
+		<result property="sysCretUserId" column="sys_cret_user_id"/>
+		<result property="sysUpdtDate" column="sys_updt_date"/>
+		<result property="sysUpdtUserId" column="sys_updt_user_id"/>
+    </resultMap>
+    
+    <sql id="queryCondition">
+    	<where>
+    		<if test="roleId != null and roleId != ''">
+    			and role_id = #{roleId}
+    		</if>
+    		<if test="roleName != null and roleName != ''">
+    			and role_name = #{roleName}
+    		</if>
+    		<if test="useYn != null and useYn != ''">
+    			and use_yn = #{useYn}
+    		</if>
+    	</where>
+    </sql>
+
+</mapper>

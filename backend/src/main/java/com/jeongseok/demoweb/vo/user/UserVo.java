@@ -1,13 +1,15 @@
-package com.jeongseok.demoweb.vo.login;
+package com.jeongseok.demoweb.vo.user;
 
 
 import com.jeongseok.demoweb.vo.BaseVo;
 
-public class LoginSelectVo extends BaseVo {
+public class UserVo extends BaseVo {
 
 	private static final long serialVersionUID = 1L;
 
 	private String userId;
+	
+	private String userPassword;
 	
 	private String userName;
 	
@@ -21,6 +23,14 @@ public class LoginSelectVo extends BaseVo {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
 	public String getUserName() {
@@ -45,5 +55,6 @@ public class LoginSelectVo extends BaseVo {
 
 	public void setSysUpdtDate(String sysUpdtDate) {
 		this.sysUpdtDate = sysUpdtDate;
-	}	
+	}
+
 }

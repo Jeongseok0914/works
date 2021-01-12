@@ -1,10 +1,10 @@
-package com.jeongseok.demoweb.vo.login;
+package com.jeongseok.demoweb.controller.login;
 
 import com.jeongseok.demoweb.vo.BaseVo;
 
 import io.swagger.annotations.ApiParam;
 
-public class LoginReqVo extends BaseVo {
+public class LoginParam extends BaseVo {
 
 	private static final long serialVersionUID = 1L;
 	
