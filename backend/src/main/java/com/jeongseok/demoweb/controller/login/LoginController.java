@@ -17,8 +17,8 @@ import io.swagger.annotations.ApiOperation;
 @Controller
 @RequestMapping(value = "/api")
 public class LoginController {
-	
-	
+
+
 	@Autowired
 	LoginService loginService;
 
@@ -27,14 +27,14 @@ public class LoginController {
 	@ResponseBody
 	public ResponseEntity<?> login(@RequestBody LoginParam param, HttpServletRequest request) throws Exception {
 		return ResponseEntity.ok(loginService.login(param, request));
-		
+
 	}
-	
-	
+
+
 	@ApiOperation(value = "Check Login", notes = "로그인 체크")
 	@PostMapping(value = "/check-login")
 	@ResponseBody
-	public ResponseEntity<?> checkLogin() throws  Exception {
-		return ResponseEntity.ok(loginService.checkLogin());
+	public ResponseEntity<?> checkLogin(HttpServletRequest request) throws Exception {
+		return ResponseEntity.ok(loginService.checkLogin(request));
 	}
 }

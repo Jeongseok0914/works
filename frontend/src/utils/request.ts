@@ -3,7 +3,6 @@ import axios from 'axios'
 import { Loading } from 'element-ui'
 import { MessageService } from '@/utils/message-service'
 import { set } from 'lodash'
-import router from '@/router'
 
 declare module 'axios' {
   export interface AxiosResponse<T = any> extends Promise<T> {
@@ -59,6 +58,9 @@ service.interceptors.response.use(
     loading.close()
     if (response.status === 500) {
       MessageService.MsgError('내부 시스템 오류 관리자에게 문의하세요.')
+    }
+    if (response.data.resultCd === 999) {
+      localStorage.removeItem('token')
     }
 
     return response.data

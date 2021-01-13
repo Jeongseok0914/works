@@ -31,7 +31,7 @@ router.beforeEach(async (to: Route, _: Route, next: any) => {
     } else {
       if (UserStoreModule.roles.length === 0) {
         try {
-          await UserStoreModule.CheckLogin({})
+          await UserStoreModule.CheckLogin()
           const roles = UserStoreModule.roles
           PermissionModule.GenerateRoutes(roles)
           router.addRoutes(PermissionModule.dynamicRoutes)

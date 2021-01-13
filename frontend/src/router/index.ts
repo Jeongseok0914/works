@@ -40,7 +40,7 @@ export const constantRoutes: RouteConfig[] = [
   {
     path: '/',
     component: routerName['Layout'],
-    redirect: '/dashboard',
+    redirect: '/approved-mgmt',
     meta: { hidden: true },
     children: [
       {
@@ -53,63 +53,7 @@ export const constantRoutes: RouteConfig[] = [
         }
       }
     ]
-  },
-  {
-    path: '/dashboard',
-    component: routerName['Layout'],
-    redirect: '/dashboard/dashboard',
-    meta: {
-      title: 'dashboard'
-    },
-    children: [
-      {
-        path: 'dashboard',
-        component: routerName['dashboard'],
-        name: 'dashboard',
-        meta: {
-          title: 'dashboard',
-          noCache: true
-        }
-      }
-    ]
   }
-  // {
-  //   path: '/unmannedPayment',
-  //   component: routerName['Layout'],
-  //   redirect: '/unmannedPayment/unmannedPayment',
-  //   meta: {
-  //     title: 'unmannedPayment'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'unmannedPayment1F',
-  //       component: routerName['unmannedPayment'],
-  //       name: 'unmannedPayment1F',
-  //       meta: {
-  //         title: 'unmannedPayment1F',
-  //         noCache: true
-  //       }
-  //     },
-  //     {
-  //       path: 'unmannedPayment2F',
-  //       component: routerName['unmannedPayment'],
-  //       name: 'unmannedPayment2F',
-  //       meta: {
-  //         title: 'unmannedPayment2F',
-  //         noCache: true
-  //       }
-  //     },
-  //     {
-  //       path: 'unmannedPayment3F',
-  //       component: routerName['unmannedPayment'],
-  //       name: 'unmannedPayment3F',
-  //       meta: {
-  //         title: 'unmannedPayment3F',
-  //         noCache: true
-  //       }
-  //     }
-  //   ]
-  // },
 ]
 
 export const asyncRoutes: RouteConfig[] = [

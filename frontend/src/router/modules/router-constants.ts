@@ -8,8 +8,6 @@ export const authRedirect = () => import('@/views/login/auth-redirect.vue')
 export const error404Page = () => import('@/views/error-page/404.vue')
 export const error401Page = () => import('@/views/error-page/401.vue')
 
-/** dev **/
-export const icons = () => import('@/views/dev/icons/index.vue')
-
 /** Biz */
-export const dashboard = () => import('@/views/dashboard/index.vue')
+export const approvedMgmt = () => import('@/views/approved-mgmt/index.vue')
+export const approvedWrite = () => import('@/views/approved-write/index.vue')

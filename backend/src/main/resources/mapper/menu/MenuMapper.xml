@@ -19,4 +19,14 @@
 		<result property="sysUpdtDate" column="sys_updt_date"/>
 		<result property="sysUpdtUserId" column="sys_updt_user_id"/>
     </resultMap>
+  		
+  		  
+  	<select id="selectListIn" parameterType="map" resultMap="menuMap">
+  		select * from menu_info
+  		where menu_id IN
+  		<foreach collection="menuList" item="item" open="(" close=")" separator=",">
+  			#{item.menuId}
+  		</foreach>
+  		ORDER BY sort_seq asc;
+  	</select>
 </mapper>

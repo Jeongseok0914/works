@@ -9,4 +9,19 @@
 		<result property="sysUpdtDate" column="sys_updt_date"/>
 		<result property="sysUpdtUserId" column="sys_updt_user_id"/>
     </resultMap>
+    
+    <sql id="queryCondition">
+    	<where>
+    		<if test="roleId != null and roleId != ''">
+    			and role_id = #{roleId}
+    		</if>
+    	</where>
+    </sql>
+    
+    <select id="selectList" parameterType="map" resultMap="menuRoleRelMap">
+    	select * from menu_role_rel
+    	<include refid="queryCondition" />
+    </select>
+    
+    
 </mapper>

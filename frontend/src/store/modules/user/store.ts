@@ -2,7 +2,8 @@ import store from '@/store'
 import { login, checkLogin, logout } from '@/api/user-api'
 import { UserStoreState } from './type'
 import { VuexModule, Module, Action, Mutation, getModule } from 'vuex-module-decorators'
-import { cloneDeep } from 'lodash'
+import { convertRouter } from './supprot'
+
 @Module({ dynamic: true, store, name: 'userStore', namespaced: true })
 class UserStore extends VuexModule implements UserStoreState {
   public roles = []
@@ -31,13 +32,11 @@ class UserStore extends VuexModule implements UserStoreState {
   }
 
   @Action({ rawError: true })
-  public async CheckLogin(payload: any) {
-    const { resultCd } = await checkLogin(payload)
-    if (resultCd === 200) {
-      const readyRouterList = []
-      this.SET_CHANGE_VALUE({ key: 'routerList', value: Object.freeze(readyRouterList) })
-      this.SET_CHANGE_VALUE({ key: 'roles', value: ['admin'] })
-    }
+  public async CheckLogin() {
+    const { data } = await checkLogin({})
+    const readyRouterList = convertRouter(data.menuList)
+    this.SET_CHANGE_VALUE({ key: 'routerList', value: Object.freeze(readyRouterList) })
+    this.SET_CHANGE_VALUE({ key: 'roles', value: ['admin'] })
   }
 
   @Action({ rawError: true })

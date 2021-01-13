@@ -57,7 +57,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { DashboardStoreModule } from '@/store/modules/dashboard/store'
 @Component({
   name: 'DashboardTable'
 })
@@ -71,13 +70,6 @@ export default class extends Vue {
     { label: 'BC카드', value: 'B' },
     { label: '국민카드', value: 'C' }
   ]
-
-  get tableData() {
-    return DashboardStoreModule.dashboardList
-  }
-  get totalCount() {
-    return DashboardStoreModule.dashboardListTotalCount
-  }
 
   created() {
     this.getDashboardList()
@@ -101,7 +93,6 @@ export default class extends Vue {
       page: this.page,
       limit: 15
     }
-    await DashboardStoreModule.GetDashboardData(payload)
   }
 }
 </script>
