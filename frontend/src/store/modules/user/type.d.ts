@@ -1,4 +1,7 @@
 export interface UserStoreState {
+  userId: string
+  roleId: string
+  userName: string
   roles: string[]
   routerList: RouteConfig[]
 }

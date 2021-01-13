@@ -1,4 +1,4 @@
-package com.jeongseok.demoweb.controller.login;
+package com.jeongseok.demoweb.controller.user;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,23 +10,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.jeongseok.demoweb.service.login.LoginService;
+import com.jeongseok.demoweb.service.user.UserService;
 
 import io.swagger.annotations.ApiOperation;
 
 @Controller
 @RequestMapping(value = "/api")
-public class LoginController {
+public class UserController {
 
 
 	@Autowired
-	LoginService loginService;
+	UserService userService;
 
 	@ApiOperation(value = "Login", notes = "사용자 로그인")
 	@PostMapping(value = "/login")
 	@ResponseBody
-	public ResponseEntity<?> login(@RequestBody LoginParam param, HttpServletRequest request) throws Exception {
-		return ResponseEntity.ok(loginService.login(param, request));
+	public ResponseEntity<?> userlogin(@RequestBody UserParam param, HttpServletRequest request) throws Exception {
+		return ResponseEntity.ok(userService.login(param, request));
 
 	}
 
@@ -34,7 +34,15 @@ public class LoginController {
 	@ApiOperation(value = "Check Login", notes = "로그인 체크")
 	@PostMapping(value = "/check-login")
 	@ResponseBody
-	public ResponseEntity<?> checkLogin(HttpServletRequest request) throws Exception {
-		return ResponseEntity.ok(loginService.checkLogin(request));
+	public ResponseEntity<?> userCheckLogin(HttpServletRequest request) throws Exception {
+		return ResponseEntity.ok(userService.checkLogin(request));
 	}
+	
+	@ApiOperation(value = "User Search", notes = "사용자 검색")
+	@PostMapping(value = "/user-search")
+	@ResponseBody
+	public ResponseEntity<?> userSearch(@RequestBody UserParam param) throws Exception {
+		return ResponseEntity.ok(userService.userSearch(param));
+	}
+	
 }

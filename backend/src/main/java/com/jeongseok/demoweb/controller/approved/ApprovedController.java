@@ -1,0 +1,31 @@
+package com.jeongseok.demoweb.controller.approved;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.jeongseok.demoweb.service.approved.ApprovedService;
+
+import io.swagger.annotations.ApiOperation;
+
+@Controller
+@RequestMapping(value = "/api")
+public class ApprovedController {
+
+	@Autowired
+	ApprovedService approvedService;
+	
+	
+	@ApiOperation(value = "Approved Insert", notes = "결재등록")
+	@PostMapping(value = "/insert-approved")
+	@ResponseBody
+	public ResponseEntity<?> insertApproved(@RequestBody ApprovedParam param,HttpServletRequest request) throws Exception {
+		return ResponseEntity.ok(approvedService.insertApproved(param, request));
+	}
+}

@@ -18,7 +18,7 @@
     	</where>
     </sql>
     
-    <select id="selectOne" parameterType="com.jeongseok.demoweb.controller.login.LoginParam" resultMap="userRoleRelMap">
+    <select id="selectOne" parameterType="com.jeongseok.demoweb.controller.user.UserParam" resultMap="userRoleRelMap">
 		SELECT * FROM user_role_rel 
 	    <include refid="queryCondition" />
 	</select>

@@ -5,7 +5,7 @@ import { TagsViewState } from './modules/tag-view/type'
 import { PermissionState } from './modules/permission/type'
 import { SettingsState } from './modules/settings/type'
 import { UserStoreState } from './modules/user/type'
-
+import { ApprovedStoreState } from './modules/approved/type'
 Vue.use(Vuex)
 
 export interface IRootState {
@@ -14,6 +14,7 @@ export interface IRootState {
   permission: PermissionState
   settings: SettingsState
   userStore: UserStoreState
+  approvedStore: ApprovedStoreState
 }
 
 // Declare empty store first, dynamically register all modules later.

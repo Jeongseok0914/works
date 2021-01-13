@@ -12,4 +12,28 @@
 		<result property="sysUpdtDate" column="sys_updt_date"/>
 		<result property="sysUpdtUserId" column="sys_updt_user_id"/>
     </resultMap>
+    
+    <insert id="insertApprovedInfo" parameterType="com.jeongseok.demoweb.controller.approved.ApprovedParam">
+    	INSERT INTO approved_info(
+    		title
+    		, content
+    		, status
+    		, del_yn
+    		, approved_user_id
+    		, sys_cret_date
+    		, sys_cret_user_id
+    		, sys_updt_date
+    		, sys_updt_user_id
+    		) VALUES (
+    		  #{title}
+    		, #{content}
+    		, #{status}
+    		, 'N'
+    		, #{approvedUserId}
+    		, sysdate()
+    		, #{sysCretUserId}
+    		, NULL
+    		, NULL);
+    
+    </insert>
 </mapper>

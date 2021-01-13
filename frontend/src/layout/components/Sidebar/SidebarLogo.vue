@@ -10,9 +10,9 @@
         <img src="@/assets/images/icon-admin-user.png" />
       </div>
       <div class="sidebar-title">
-        <div class="text1">홍길동</div>
-        <div class="text2">EUMC MOKDONG 원무</div>
-        <div class="text3">Administator</div>
+        <div class="text1">{{ userName }}</div>
+        <div class="text2">{{ roleName }}</div>
+        <div class="text3">{{ userId }}</div>
         <el-button class="button-1" type="text" @click.native="logout()"><img src="@/assets/images/icon-out.png"/></el-button>
       </div>
     </div>
@@ -24,12 +24,26 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 import { UserStoreModule } from '@/store/modules/user/store'
 import { SettingsModule } from '@/store/modules/settings/store'
 import { Loading } from 'element-ui'
+
 import router from '@/router'
 @Component({
   name: 'SidebarLogo'
 })
 export default class extends Vue {
   @Prop({ required: true }) private collapse!: boolean
+
+  get userId() {
+    return UserStoreModule.userId
+  }
+
+  get userName() {
+    return UserStoreModule.userName
+  }
+
+  get roleName() {
+    return UserStoreModule.roleId
+  }
+
   private async logout() {
     await UserStoreModule.Logout()
 

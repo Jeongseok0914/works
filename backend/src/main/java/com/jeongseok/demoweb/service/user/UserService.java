@@ -1,4 +1,4 @@
-package com.jeongseok.demoweb.service.login;
+package com.jeongseok.demoweb.service.user;
 
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.jeongseok.demoweb.controller.login.LoginParam;
+import com.jeongseok.demoweb.controller.user.UserParam;
 import com.jeongseok.demoweb.dao.menu.MenuDao;
 import com.jeongseok.demoweb.dao.menu.MenuRoleRelDao;
 import com.jeongseok.demoweb.dao.user.UserDao;
@@ -25,7 +25,7 @@ import com.jeongseok.demoweb.vo.user.UserVo;
 
 @Service
 @Transactional
-public class LoginService {
+public class UserService {
 
 	@Autowired
 	private UserDao userDao;
@@ -39,7 +39,7 @@ public class LoginService {
 	@Autowired
 	private MenuRoleRelDao menuRoleRelDao;
 
-	public ResponseBaseVo login(LoginParam param, HttpServletRequest request) throws Exception {
+	public ResponseBaseVo login(UserParam param, HttpServletRequest request) throws Exception {
 		ResponseBaseVo responseBaseVo = new ResponseBaseVo();
 
 		UserVo userVo = userDao.selectOne(param);
@@ -104,12 +104,30 @@ public class LoginService {
 		if (session == null) {
 			responseBaseVo.setResultCd(999);
 			responseBaseVo.setResultMsg("Session Expiry");
+			return responseBaseVo;
 		}
 		
 		SessionVo sessionVo = (SessionVo) session.getAttribute("sessionVo");
 		responseBaseVo.setResultMsg("Success");
 		responseBaseVo.setData(sessionVo);
 
+		return responseBaseVo;
+	}
+	
+	public ResponseBaseVo userSearch(UserParam param) throws Exception {
+		ResponseBaseVo responseBaseVo = new ResponseBaseVo();
+		
+		List<UserVo> userList = userDao.selectList(param);
+		if (0 >= userList.size()) {
+			responseBaseVo.setResultCd(210);
+			responseBaseVo.setResultMsg("inconsistency");
+			return responseBaseVo;	
+		}
+		
+		responseBaseVo.setResultCd(200);
+		responseBaseVo.setResultMsg("Success");
+		responseBaseVo.setData(userList);
+		
 		return responseBaseVo;
 	}
 }

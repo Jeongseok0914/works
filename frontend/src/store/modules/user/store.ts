@@ -1,13 +1,21 @@
 import store from '@/store'
-import { login, checkLogin, logout } from '@/api/user-api'
+import { login, checkLogin, logout, userSearch } from '@/api/user-api'
 import { UserStoreState } from './type'
 import { VuexModule, Module, Action, Mutation, getModule } from 'vuex-module-decorators'
 import { convertRouter } from './supprot'
 
 @Module({ dynamic: true, store, name: 'userStore', namespaced: true })
 class UserStore extends VuexModule implements UserStoreState {
+  public userId = ''
+  public userName = ''
+  public roleId = ''
   public roles = []
   public routerList = []
+  public approvedUserInfo = {
+    userId: '',
+    userName: ''
+  }
+  public approvedUserList = []
 
   @Mutation
   private SET_CHANGE_VALUE(payload: { key: string; value: any }) {
@@ -35,14 +43,23 @@ class UserStore extends VuexModule implements UserStoreState {
   public async CheckLogin() {
     const { data } = await checkLogin({})
     const readyRouterList = convertRouter(data.menuList)
+    this.SET_CHANGE_VALUE({ key: 'userId', value: data.userId })
+    this.SET_CHANGE_VALUE({ key: 'userName', value: data.userName })
+    this.SET_CHANGE_VALUE({ key: 'roleId', value: data.roleId })
     this.SET_CHANGE_VALUE({ key: 'routerList', value: Object.freeze(readyRouterList) })
     this.SET_CHANGE_VALUE({ key: 'roles', value: ['admin'] })
   }
 
   @Action({ rawError: true })
   public async Logout() {
-    // await logout({ title: '로그아웃' })
+    await logout({ title: '로그아웃' })
     localStorage.removeItem('token')
+  }
+
+  @Action({ rawError: true })
+  public async UserSearch(payload: { userName: string }) {
+    const { data } = await userSearch(payload)
+    this.SET_CHANGE_VALUE({ key: 'approvedUserList', value: data })
   }
 
   @Action({ rawError: true })

@@ -20,3 +20,10 @@ export const logout = (data: any) =>
     method: 'post',
     data
   })
+
+export const userSearch = (data: any) =>
+  request({
+    url: '/user-search',
+    method: 'post',
+    data
+  })

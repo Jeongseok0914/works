@@ -3,7 +3,6 @@
 <mapper namespace="com.jeongseok.demoweb.dao.user.UserDao">
 	<resultMap id="userMap" type="com.jeongseok.demoweb.vo.user.UserVo">
 		<result property="userId" column="user_id"/>
-		<result property="userPassword" column="user_password"/>
 		<result property="userName" column="user_name"/>
 		<result property="sysCretDate" column="sys_cret_date"/>
 		<result property="sysUpdtDate" column="sys_updt_date"/>
@@ -14,15 +13,24 @@
     		<if test="userId != null and userId != ''">
     			and user_id = #{userId}
     		</if>
+    		<if test="userName != null and userName != ''">
+    			and user_name LIKE CONCAT('%',#{userName},'%')
+    		</if>
     		<if test="userPassword != null and userPassword != ''">
     			and user_password = #{userPassword}
     		</if>
+    		
     	</where>
     </sql>
     
- 	<select id="selectOne" parameterType="com.jeongseok.demoweb.controller.login.LoginParam" resultMap="userMap">
+ 	<select id="selectOne" parameterType="com.jeongseok.demoweb.controller.user.UserParam" resultMap="userMap">
 		SELECT * FROM user_info 
 	    <include refid="queryCondition" />
+	</select>
+	
+	<select id="selectList" parameterType="com.jeongseok.demoweb.controller.user.UserParam" resultMap="userMap">
+		SELECT * FROM user_info
+		<include refid="queryCondition" />
 	</select>
 	
 	
