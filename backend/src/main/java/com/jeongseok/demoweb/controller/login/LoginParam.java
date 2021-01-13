@@ -2,16 +2,12 @@ package com.jeongseok.demoweb.controller.login;
 
 import com.jeongseok.demoweb.vo.BaseVo;
 
-import io.swagger.annotations.ApiParam;
-
 public class LoginParam extends BaseVo {
 
 	private static final long serialVersionUID = 1L;
 	
-	@ApiParam(value = "사용자 아이디", required = true)
 	private String userId;
 	
-	@ApiParam(value = "사용자 비밀번호", required = true)
 	private String userPassword;
 
 	public String getUserId() {
@@ -29,6 +25,5 @@ public class LoginParam extends BaseVo {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	
 	
 }

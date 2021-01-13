@@ -19,13 +19,12 @@ public class LoginService {
 
 	@Autowired
 	private UserDao loginDao;
-	
+
 
 	public ResponseBaseVo login(LoginParam param, HttpServletRequest request) throws Exception {
 		ResponseBaseVo responseBaseVo = new ResponseBaseVo();
-		
 		UserVo selectVo = loginDao.selectOne(param);
-		
+
 		if( selectVo == null ) {
 			responseBaseVo.setResultCd(210);
 			responseBaseVo.setResultMsg("inconsistency");
@@ -34,19 +33,25 @@ public class LoginService {
 			HttpSession session = request.getSession(true);
 			session.invalidate();
 			session = request.getSession();
-			
+
 			SessionVo sessionVo = new SessionVo();
 			sessionVo.setUserId(selectVo.getUserId());
 			sessionVo.setUserName(selectVo.getUserName());
-			
+
 			session.setAttribute("sessionBo", sessionVo);
-			
+
 			responseBaseVo.setResultCd(200);
 			responseBaseVo.setResultMsg("Success");
+			responseBaseVo.setData(session.getId());
 
 		}
 
 		return responseBaseVo;	
+	}
+
+	public ResponseBaseVo checkLogin() throws Exception {
+		ResponseBaseVo responseBaseVo = new ResponseBaseVo();
+		return responseBaseVo;
 	}
 
 }

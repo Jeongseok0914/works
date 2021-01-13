@@ -20,7 +20,7 @@
     	</where>
     </sql>
     
- 	<select id="selectOne" parameterType="com.jeongseok.demoweb.param.LoginParam" resultMap="userMap">
+ 	<select id="selectOne" parameterType="com.jeongseok.demoweb.controller.login.LoginParam" resultMap="userMap">
 		SELECT * FROM user_info 
 	    <include refid="queryCondition" />
 	</select>

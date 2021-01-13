@@ -1,0 +1,71 @@
+{
+    "files.exclude": {
+        "**/node_modules": true,
+        "*/*.gitignore": true,
+        "*/docs": true,
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/dist/": true,
+        "**/docs": true,
+        "*/tagat": true,
+        "**/*.css": true,
+        "*/*.gitignore": true
+    },
+    "eslint.validate": [
+        "vue",
+        "typescript"
+    ],
+    "eslint.workingDirectories": [
+        "${workspaceRoot}"
+    ],
+    "eslint.packageManager": "yarn",
+    "eslint.options": {
+        "configFile": ".eslintrc.js",
+        "ignorePath": ".eslintignore"
+    },
+    "sync.forceUpload": false,
+    "sync.autoUpload": true,
+    "sync.gist": "1a6773ac6b01e57e5cd0863e2f7c1c93",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.sideBar.location": "left",
+    "emmet.triggerExpansionOnTab": true,
+    "[java]": {
+        "editor.formatOnSave": true
+    },
+    "[xml]": {
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.formatOnSave": true
+    },
+    "bracket-pair-colorizer-2.colorMode": "Consecutive",
+    "powermode.presets": "magic",
+    "powermode.enabled": true,
+    "powermode.enableShake": false,
+    "powermode.explosionFrequency": 1,
+    "powermode.maxExplosions": 1,
+    "powermode.explosionSize": 10,
+    "powermode.shakeIntensity": 25,
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "editor.autoIndent": "none",
+    "editor.fontSize": 14,
+    "editor.suggestSelection": "first",
+    "editor.snippetSuggestions": "top",
+    "editor.mouseWheelZoom": false,
+    "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
+    "window.openFilesInNewWindow": "off",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "window.zoomLevel": 0,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.iconTheme": "material-icon-theme"
+}

@@ -1,0 +1,220 @@
+/* Variables */
+
+// Base color
+$blue:#324157;
+$light-blue:#3A71A8;
+$red:#C03639;
+$pink: #E65D6E;
+$green: #30B08F;
+$tiffany: #4AB7BD;
+$yellow:#FEC171;
+$panGreen: #30B08F;
+
+// Sidebar
+$sideBarWidth: 320px;
+$subMenuBg: #2e333e;
+$subMenuHover:#323640;
+$subMenuActiveText:#ffffff;;
+$menuBg:#2e333e;
+$menuText:#ffffff;
+$menuActiveText:#ffffff; // Also see settings.sidebarTextTheme
+
+// Login page
+$lightGray: #eee;
+$darkGray:#889aa4;
+$loginBg: #2d3a4b;
+$loginCursorColor: #fff;
+
+// Chart page
+$chartTitle: #808080;
+$subTitle: #90979c;
+$chartLegend: #7D7D7D;
+$axisLine: #008ACC;
+$axisLineText: #008ACC;
+$dashLine: #8C97B5;
+
+//chart Color
+$payment: #358ed7;
+$arrive:#1fa7cb;
+$numberTicket: #828dd4;
+$proof: #e7b529;
+$insurance: #7dc855;
+$install:#fb7f1a;
+$obstacle: #5e6977;
+
+
+$v5ABDBF: rgba(90, 189, 191, 1);  // base #5ABDBF
+$vF1BA89: rgba(241, 186, 137, 1); // base #F1BA89
+$vD57C82: rgba(213, 124, 130, 1); // base #D57C82
+$vB7A2DE: rgba(183, 162, 222, 1); // base #B7A2DE
+$v3D87BF: rgba(61, 135, 193, 1);  // base #3D87BF
+$vEAABAD: rgba(234, 171, 173, 1); // base #EAABAD
+$v9CC4AB: rgba(156, 196, 171, 1); // base #9CC4AB
+$vF09F74: rgba(240, 159, 116, 1); // base #F09F74
+$vD9BFA5: rgba(217, 191, 165, 1); // base #D9BFA5
+$v9BB8D5: rgba(109, 151, 171, 1); // base #9BB8D5
+$v387273: rgba(56, 114, 115, 1);  // base #387273
+$v9680A4: rgba(150, 128, 164, 1); // base #9680A4
+$vD0A792: rgba(208, 167, 146, 1); // base #D0A792
+$vEB8985: rgba(235, 137, 133, 1); // base #EB8985
+$v6C8BA7: rgba(108, 139, 167, 1); // base #6C8BA7
+$v969D67: rgba(150, 157, 103, 1); // base #969D67
+$vC2A9BF: rgba(194, 169, 191, 1); // base #C2A9BF
+$v6F8E8B: rgba(111, 142, 139, 1); // base #6F8E8B
+$vEAA69A: rgba(234, 166, 154, 1); // base #EAA69A
+$v7A7363: rgba(122, 155, 99, 1);  // base #7A7363
+$v457F8E: rgba(69, 127, 142, 1);  // base #457F8E
+$v6182C3: rgba(97, 130, 195, 1);  // base #6182C3
+$vE17C9D: rgba(225, 124, 157, 1); // base #E17C9D
+$v8C97B5: rgba(140, 151, 181, 1); // base gray(#8C97B5)
+
+$m5ABDBF: rgba(90, 189, 191, .7);
+$mF1BA89: rgba(241, 186, 137, .7); 
+$mD57C82: rgba(213, 124, 130, .7); 
+$mB7A2DE: rgba(183, 162, 222, .7); 
+$m3D87BF: rgba(61, 135, 193, .7); 
+$mEAABAD: rgba(234, 171, 173, .7); 
+$m9CC4AB: rgba(156, 196, 171, .7); 
+$mF09F74: rgba(240, 159, 116, .7); 
+$mD9BFA5: rgba(217, 191, 165, .7); 
+$m9BB8D5: rgba(109, 151, 171, .7); 
+$m387273: rgba(56, 114, 115, .7);
+$m9680A4: rgba(150, 128, 164, .7);
+$mD0A792: rgba(208, 167, 146, .7);
+$mEB8985: rgba(235, 137, 133, .7);
+$m6C8BA7: rgba(108, 139, 167, .7);
+$m969D67: rgba(150, 157, 103, .7);
+$mC2A9BF: rgba(194, 169, 191, .7);
+$m6F8E8B: rgba(111, 142, 139, .7);
+$mEAA69A: rgba(234, 166, 154, .7);
+$m7A7363: rgba(122, 155, 99, .7);
+$m457F8E: rgba(69, 127, 142, .7);
+$m6182C3: rgba(97, 130, 195, .7);
+$mE17C9D: rgba(225, 124, 157, .7);
+$m8C97B5: rgba(140, 151, 181, .7); 
+
+$t5ABDBF: rgba(90, 189, 191, .4);
+$tF1BA89: rgba(241, 186, 137, .4); 
+$tD57C82: rgba(213, 124, 130, .4); 
+$tB7A2DE: rgba(183, 162, 222, .4); 
+$t3D87BF: rgba(61, 135, 193, .4); 
+$tEAABAD: rgba(234, 171, 173, .4); 
+$t9CC4AB: rgba(156, 196, 171, .4); 
+$tF09F74: rgba(240, 159, 116, .4); 
+$tD9BFA5: rgba(217, 191, 165, .4); 
+$t9BB8D5: rgba(109, 151, 171, .4); 
+$t387273: rgba(56, 114, 115, .4);
+$t9680A4: rgba(150, 128, 164, .4);
+$tD0A792: rgba(208, 167, 146, .4);
+$tEB8985: rgba(235, 137, 133, .4);
+$t6C8BA7: rgba(108, 139, 167, .4);
+$t969D67: rgba(150, 157, 103, .4);
+$tC2A9BF: rgba(194, 169, 191, .4);
+$t6F8E8B: rgba(111, 142, 139, .4);
+$tEAA69A: rgba(234, 166, 154, .4);
+$t7A7363: rgba(122, 155, 99, .4);
+$t457F8E: rgba(69, 127, 142, .4);
+$t6182C3: rgba(97, 130, 195, .4);
+$tE17C9D: rgba(225, 124, 157, .4);
+$t8C97B5: rgba(140, 151, 181, .4); 
+
+
+
+
+// The :export directive is the magic sauce for webpack
+// https://mattferderer.com/use-sass-variables-in-typescript-and-javascript
+:export {
+  menuBg: $menuBg;
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+
+  payment: $payment; 
+  arrive: $arrive;
+  numberTicket: $numberTicket; 
+  proof: $proof; 
+  insurance: $insurance; 
+  install: $install;
+  obstacle: $obstacle; 
+
+  v5ABDBF: $v5ABDBF;
+  vF1BA89: $vF1BA89;
+  vD57C82: $vD57C82;
+  vB7A2DE: $vB7A2DE;
+  v3D87BF: $v3D87BF;
+  vEAABAD: $vEAABAD;
+  v9CC4AB: $v9CC4AB;
+  vF09F74: $vF09F74;
+  vD9BFA5: $vD9BFA5;
+  v9BB8D5: $v9BB8D5;
+  v387273: $v387273;
+  v9680A4: $v9680A4;
+  vD0A792: $vD0A792;
+  vEB8985: $vEB8985;
+  v6C8BA7: $v6C8BA7;
+  v969D67: $v969D67;
+  vC2A9BF: $vC2A9BF;
+  v6F8E8B: $v6F8E8B;
+  vEAA69A: $vEAA69A;
+  v7A7363: $v7A7363;
+  v457F8E: $v457F8E;
+  v6182C3: $v6182C3;
+  vE17C9D: $vE17C9D;
+  v8C97B5: $v8C97B5;
+
+  m5ABDBF: $m5ABDBF;
+  mF1BA89: $mF1BA89;
+  mD57C82: $mD57C82;
+  mB7A2DE: $mB7A2DE;
+  m3D87BF: $m3D87BF;
+  mEAABAD: $mEAABAD;
+  m9CC4AB: $m9CC4AB;
+  mF09F74: $mF09F74;
+  mD9BFA5: $mD9BFA5;
+  m9BB8D5: $m9BB8D5;
+  m387273: $m387273;
+  m9680A4: $m9680A4;
+  mD0A792: $mD0A792;
+  mEB8985: $mEB8985;
+  m6C8BA7: $m6C8BA7;
+  m969D67: $m969D67;
+  mC2A9BF: $mC2A9BF;
+  m6F8E8B: $m6F8E8B;
+  mEAA69A: $mEAA69A;
+  m7A7363: $m7A7363;
+  m457F8E: $m457F8E;
+  m6182C3: $m6182C3;
+  mE17C9D: $mE17C9D;
+  m8C97B5: $m8C97B5;
+
+  t5ABDBF: $t5ABDBF;
+  tF1BA89: $tF1BA89;
+  tD57C82: $tD57C82;
+  tB7A2DE: $tB7A2DE;
+  t3D87BF: $t3D87BF;
+  tEAABAD: $tEAABAD;
+  t9CC4AB: $t9CC4AB;
+  tF09F74: $tF09F74;
+  tD9BFA5: $tD9BFA5;
+  t9BB8D5: $t9BB8D5;
+  t387273: $t387273;
+  t9680A4: $t9680A4;
+  tD0A792: $tD0A792;
+  tEB8985: $tEB8985;
+  t6C8BA7: $t6C8BA7;
+  t969D67: $t969D67;
+  tC2A9BF: $tC2A9BF;
+  t6F8E8B: $t6F8E8B;
+  tEAA69A: $tEAA69A;
+  t7A7363: $t7A7363;
+  t457F8E: $t457F8E;
+  t6182C3: $t6182C3;
+  tE17C9D: $tE17C9D;
+  t8C97B5: $t8C97B5;
+
+  chartTitle: $chartTitle;
+  subTitle:$subTitle;
+  chartLegend: $chartLegend;
+  axisLine: $axisLine;
+  axisLineText:$axisLineText;
+  dashLine:$dashLine;
+}
