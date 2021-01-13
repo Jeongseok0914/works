@@ -1,5 +1,5 @@
 import store from '@/store'
-import { login, checkLogin, logout } from '@/api/user-api'
+import { login, checkLogin, logout, getUserList, getDashboardUser } from '@/api/user-api'
 import { DashboardStoreState } from './type'
 import { VuexModule, Module, Action, Mutation, getModule } from 'vuex-module-decorators'
 import { cloneDeep } from 'lodash'

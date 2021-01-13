@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router, { RouteConfig } from 'vue-router'
 
-import * as routerName from '@/router/router-constants'
+import * as routerName from '@/router/modules/router-constants'
 
 Vue.use(Router)
 
@@ -72,16 +72,44 @@ export const constantRoutes: RouteConfig[] = [
         }
       }
     ]
-  },
-  {
-    path: 'unmannedPayment3F',
-    component: routerName['unmannedPayment'],
-    name: 'unmannedPayment3F',
-    meta: {
-      title: 'unmannedPayment3F',
-      noCache: true
-    }
   }
+  // {
+  //   path: '/unmannedPayment',
+  //   component: routerName['Layout'],
+  //   redirect: '/unmannedPayment/unmannedPayment',
+  //   meta: {
+  //     title: 'unmannedPayment'
+  //   },
+  //   children: [
+  //     {
+  //       path: 'unmannedPayment1F',
+  //       component: routerName['unmannedPayment'],
+  //       name: 'unmannedPayment1F',
+  //       meta: {
+  //         title: 'unmannedPayment1F',
+  //         noCache: true
+  //       }
+  //     },
+  //     {
+  //       path: 'unmannedPayment2F',
+  //       component: routerName['unmannedPayment'],
+  //       name: 'unmannedPayment2F',
+  //       meta: {
+  //         title: 'unmannedPayment2F',
+  //         noCache: true
+  //       }
+  //     },
+  //     {
+  //       path: 'unmannedPayment3F',
+  //       component: routerName['unmannedPayment'],
+  //       name: 'unmannedPayment3F',
+  //       meta: {
+  //         title: 'unmannedPayment3F',
+  //         noCache: true
+  //       }
+  //     }
+  //   ]
+  // },
 ]
 
 export const asyncRoutes: RouteConfig[] = [

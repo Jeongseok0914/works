@@ -10,11 +10,16 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { TagsViewModule } from '@/store/modules/tag-view/store'
 
 @Component({
   name: 'AppMain'
 })
 export default class extends Vue {
+  get cachedViews() {
+    return TagsViewModule.cachedViews
+  }
+
   get key() {
     return this.$route.path
   }

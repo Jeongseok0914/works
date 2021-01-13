@@ -1,6 +1,6 @@
 <template>
   <div>
-    ApprovedWrite
+    1
   </div>
 </template>
 

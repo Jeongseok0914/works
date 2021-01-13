@@ -48,6 +48,14 @@ export default class extends Vue {
     SettingsModule.ChangeSetting({ key: 'fixedHeader', value })
   }
 
+  get showTagsView() {
+    return SettingsModule.showTagsView
+  }
+
+  set showTagsView(value) {
+    SettingsModule.ChangeSetting({ key: 'showTagsView', value })
+  }
+
   get showSidebarLogo() {
     return SettingsModule.showSidebarLogo
   }
