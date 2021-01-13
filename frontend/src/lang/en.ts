@@ -1,9 +1,7 @@
 export default {
   route: {
     main: '메인',
-    dev: 'Dev',
-    user: 'User-Mgmt',
-    icons: 'Icon'
+    dev: 'Dev'
   },
   login: {
     login: 'LOGIN',

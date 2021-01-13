@@ -2,12 +2,6 @@
   <div :class="classObj" class="app-wrapper">
     <div v-if="classObj.mobile && sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
     <sidebar class="sidebar-container" />
-    <div :class="{ hasTagsView: showTagsView }" class="main-container">
-      <div :class="{ 'fixed-header': fixedHeader }">
-        <tags-view v-if="showTagsView" />
-      </div>
-      <app-main />
-    </div>
   </div>
 </template>
 
@@ -16,7 +10,7 @@ import { Component } from 'vue-property-decorator'
 import { mixins } from 'vue-class-component'
 import { DeviceType, AppStoreModule } from '@/store/modules/app/store'
 import { SettingsModule } from '@/store/modules/settings/store'
-import { AppMain, Navbar, Settings, Sidebar, TagsView } from './components'
+import { AppMain, Navbar, Settings, Sidebar } from './components'
 import ResizeMixin from './mixin/resize'
 
 @Component({
@@ -25,8 +19,7 @@ import ResizeMixin from './mixin/resize'
     AppMain,
     Navbar,
     Settings,
-    Sidebar,
-    TagsView
+    Sidebar
   }
 })
 export default class extends mixins(ResizeMixin) {
@@ -41,10 +34,6 @@ export default class extends mixins(ResizeMixin) {
 
   get showSettings() {
     return SettingsModule.showSettings
-  }
-
-  get showTagsView() {
-    return SettingsModule.showTagsView
   }
 
   get fixedHeader() {

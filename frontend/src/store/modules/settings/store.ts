@@ -11,7 +11,6 @@ class Settings extends VuexModule implements SettingsState {
   public theme = elementVariables.theme
   public fixedHeader = defaultSettings.fixedHeader
   public showSettings = defaultSettings.showSettings
-  public showTagsView = defaultSettings.showTagsView
   public showSidebarLogo = defaultSettings.showSidebarLogo
   public sidebarTextTheme = defaultSettings.sidebarTextTheme
   public loginTime = defaultSettings.loginTime

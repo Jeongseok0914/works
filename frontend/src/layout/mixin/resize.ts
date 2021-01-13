@@ -16,40 +16,15 @@ export default class extends Vue {
   }
 
   @Watch('$route')
-  private onRouteChange() {
-    // if (this.device === DeviceType.Mobile && this.sidebar.opened) {
-    //   AppStoreModule.CloseSideBar(false)
-    // }
-  }
+  private onRouteChange() {}
 
-  beforeMount() {
-    // window.addEventListener('resize', this.resizeHandler)
-  }
+  beforeMount() {}
 
-  mounted() {
-    // const isMobile = this.isMobile()
-    // if (isMobile) {
-    //   AppStoreModule.ToggleDevice(DeviceType.Mobile)
-    //   AppStoreModule.CloseSideBar(true)
-    // }
-  }
+  mounted() {}
 
-  beforeDestroy() {
-    // window.removeEventListener('resize', this.resizeHandler)
-  }
+  beforeDestroy() {}
 
-  private isMobile() {
-    // const rect = document.body.getBoundingClientRect()
-    // return rect.width - 1 < WIDTH
-  }
+  private isMobile() {}
 
-  private resizeHandler() {
-    // if (!document.hidden) {
-    //   const isMobile = this.isMobile()
-    //   AppStoreModule.ToggleDevice(isMobile ? DeviceType.Mobile : DeviceType.Desktop)
-    //   if (isMobile) {
-    //     AppStoreModule.CloseSideBar(true)
-    //   }
-    // }
-  }
+  private resizeHandler() {}
 }
