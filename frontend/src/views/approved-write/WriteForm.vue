@@ -40,15 +40,14 @@ import { MessageService } from '@/utils/message-service'
   components: { UserSearchPopup }
 })
 export default class extends Vue {
-  private showDialog = false
   $refs!: { writeForm: any }
+  private showDialog = false
+  private title: string = ''
+  private content: string = ''
 
   get approvedUser() {
     return UserStoreModule.approvedUserInfo
   }
-
-  private title: string = ''
-  private content: string = ''
 
   private async setApproved() {
     const payload = {

@@ -3,8 +3,7 @@
     <div class="login-container-sub">
       <el-form ref="loginForm" :model="loginForm" class="login-form" autocomplete="on" label-position="left">
         <div class="title-container">
-          <!-- <img src="@/assets/images/icon-logo-yi.png" /> -->
-          <h3 class="title"></h3>
+          <h3 class="title">결재 관리 시스템</h3>
         </div>
 
         <el-form-item prop="userId">
@@ -206,7 +205,6 @@ export default class extends Vue {
       font-size: 26px;
       color: white;
       text-shadow: offset-x offset-y blur-radius color inherit;
-      margin: 80px auto 40px auto;
       text-align: center;
       font-weight: 800;
     }

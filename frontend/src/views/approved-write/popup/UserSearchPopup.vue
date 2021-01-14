@@ -31,6 +31,7 @@ export default class extends Vue {
   private name: string = ''
   private radioItem = { userId: '', userName: '' }
   private radio = ''
+
   get approvedUserList() {
     return UserStoreModule.approvedUserList
   }

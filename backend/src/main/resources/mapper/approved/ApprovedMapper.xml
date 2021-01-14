@@ -35,13 +35,15 @@
 				title = #{title}
 			</if>
 			<if test="content != null and content != '' ">
-				content = #{content}
+				,content = #{content}
 			</if>
 			<if test="status != null and status != '' ">
-				content = #{content}
+				status = #{status}
 				,sys_updt_date = sysdate()
 				,sys_updt_user_id = #{sysUpdtUserId}
 			</if>
+			WHERE
+			idx = #{idx}
 		</trim>
 	</sql>
 
@@ -86,14 +88,11 @@
 		parameterType="com.jeongseok.demoweb.controller.approved.ApprovedParam">
 		UPDATE approved_info
 		<include refid="updateQueryCondition" />
-		where 1=1
-		idx = #{idx}
+		
 	</update>
 	
 	<delete id="deleteApprovedInfo"
 		parameterType="com.jeongseok.demoweb.controller.approved.ApprovedParam">
-		DELETE FROM approved_info
-		where 1=1
-		idx = #{idx}
+		DELETE FROM approved_info WHERE idx = #{idx}
 		</delete>
 </mapper>

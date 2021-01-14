@@ -34,7 +34,6 @@ public class ApprovedService {
 		}
 		
 		SessionVo sessionVo = (SessionVo) session.getAttribute("sessionVo");
-		System.out.println(sessionVo.getRoleId());
 		if (sessionVo.getRoleId().equals(Constants.ROLE_USER_APPROVER)) {
 			param.setApprovedUserId(sessionVo.getUserId());
 			
@@ -48,7 +47,6 @@ public class ApprovedService {
 			return responseBaseVo;
 		}
 		
-		System.out.println(param.getApprovedUserId());
 		List<ApprovedVo> approvedList = approvedDao.selectList(param);
 		responseBaseVo.setData(approvedList);
 		
@@ -73,7 +71,59 @@ public class ApprovedService {
 		
 		if (insertResult == 0) {
 			responseBaseVo.setResultCd(999);
-			responseBaseVo.setResultMsg("fale");
+			responseBaseVo.setResultMsg("false");
+			return responseBaseVo;
+		}
+
+		return responseBaseVo;
+	}
+	
+	public ResponseBaseVo updateApproved(ApprovedParam param, HttpServletRequest request) throws Exception {
+		ResponseBaseVo responseBaseVo = new ResponseBaseVo();
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			responseBaseVo.setResultCd(999);
+			responseBaseVo.setResultMsg("Session Expiry");
+			return responseBaseVo;
+		}
+		
+		SessionVo sessionVo = (SessionVo) session.getAttribute("sessionVo");
+		if (sessionVo.getRoleId().equals(Constants.ROLE_USER_APPROVER)) {
+			param.setSysUpdtUserId(sessionVo.getUserId());
+			
+			
+		} else if (sessionVo.getRoleId().equals(Constants.ROLE_USER_REQUESTER)) {
+			param.setSysCretUserId(sessionVo.getUserId());
+			
+		} else {
+			responseBaseVo.setResultCd(999);
+			responseBaseVo.setResultMsg("Session Expiry");
+			return responseBaseVo;
+		}
+		
+		int updateResult = approvedDao.updateApprovedInfo(param);
+		if (updateResult == 0) {
+			responseBaseVo.setResultCd(999);
+			responseBaseVo.setResultMsg("false");
+			return responseBaseVo;
+		}
+		
+		return responseBaseVo;
+	}
+	
+	public ResponseBaseVo deleteApproved(ApprovedParam param, HttpServletRequest request) throws Exception {
+		ResponseBaseVo responseBaseVo = new ResponseBaseVo();
+		HttpSession session = request.getSession(false);
+		if (session == null) {
+			responseBaseVo.setResultCd(999);
+			responseBaseVo.setResultMsg("Session Expiry");
+			return responseBaseVo;
+		}
+		
+		int deleteResult = approvedDao.deleteApprovedInfo(param);
+		if (deleteResult == 0) {
+			responseBaseVo.setResultCd(999);
+			responseBaseVo.setResultMsg("false");
 			return responseBaseVo;
 		}
 

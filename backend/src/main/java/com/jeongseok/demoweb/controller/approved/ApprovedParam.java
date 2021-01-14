@@ -6,6 +6,8 @@ public class ApprovedParam extends BaseVo {
 	
 	private static final long serialVersionUID = 1L;
 	
+	private int idx;
+	
 	private String title;
 	
 	private String content;
@@ -16,10 +18,20 @@ public class ApprovedParam extends BaseVo {
 	
 	private String sysCretUserId;
 	
+	private String sysUpdtUserId;
+	
 	private int page;
 	
 	private int limit;
 	
+	public int getIdx() {
+		return idx;
+	}
+
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -58,6 +70,14 @@ public class ApprovedParam extends BaseVo {
 
 	public void setSysCretUserId(String sysCretUserId) {
 		this.sysCretUserId = sysCretUserId;
+	}
+	
+	public String getSysUpdtUserId() {
+		return sysUpdtUserId;
+	}
+
+	public void setSysUpdtUserId(String sysUpdtUserId) {
+		this.sysUpdtUserId = sysUpdtUserId;
 	}
 
 	public int getPage() {

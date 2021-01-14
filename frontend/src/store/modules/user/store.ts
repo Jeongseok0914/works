@@ -59,7 +59,8 @@ class UserStore extends VuexModule implements UserStoreState {
   @Action({ rawError: true })
   public async UserSearch(payload: { userName: string }) {
     const { data } = await userSearch(payload)
-    this.SET_CHANGE_VALUE({ key: 'approvedUserList', value: data })
+    const approvedUser = data.filter(item => item.userId !== this.userId)
+    this.SET_CHANGE_VALUE({ key: 'approvedUserList', value: approvedUser })
   }
 
   @Action({ rawError: true })

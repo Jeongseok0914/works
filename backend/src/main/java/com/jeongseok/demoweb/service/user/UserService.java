@@ -44,7 +44,6 @@ public class UserService {
 
 		UserVo userVo = userDao.selectOne(param);
 		UserRoleRelVo userRoleRelVo = userRoleRelDao.selectOne(param);
-		System.out.println(userRoleRelVo.getRoleId());
 		if( userVo == null || userRoleRelVo == null ) {
 			responseBaseVo.setResultCd(210);
 			responseBaseVo.setResultMsg("inconsistency");

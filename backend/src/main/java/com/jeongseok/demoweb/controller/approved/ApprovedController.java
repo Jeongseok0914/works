@@ -34,4 +34,18 @@ public class ApprovedController {
 	public ResponseEntity<?> insertApproved(@RequestBody ApprovedParam param,HttpServletRequest request) throws Exception {
 		return ResponseEntity.ok(approvedService.insertApproved(param, request));
 	}
+	
+	@ApiOperation(value = "Approved Update", notes = "결재수정")
+	@PostMapping(value = "/update-approved")
+	@ResponseBody
+	public ResponseEntity<?> updateApproved(@RequestBody ApprovedParam param,HttpServletRequest request) throws Exception {
+		return ResponseEntity.ok(approvedService.updateApproved(param, request));
+	}
+	
+	@ApiOperation(value = "Approved Delete", notes = "결재삭제")
+	@PostMapping(value = "/delete-approved")
+	@ResponseBody
+	public ResponseEntity<?> deleteApproved(@RequestBody ApprovedParam param,HttpServletRequest request) throws Exception {
+		return ResponseEntity.ok(approvedService.deleteApproved(param, request));
+	}
 }
