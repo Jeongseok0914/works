@@ -20,7 +20,13 @@ public class ApprovedController {
 
 	@Autowired
 	ApprovedService approvedService;
-	
+
+	@ApiOperation(value = "Approved Select", notes = "결재 리스트")
+	@PostMapping(value = "/select-approved")
+	@ResponseBody
+	public ResponseEntity<?> selectApproved(@RequestBody ApprovedParam param, HttpServletRequest request) throws Exception {
+		return ResponseEntity.ok(approvedService.selectListApproved(param, request));
+	}
 	
 	@ApiOperation(value = "Approved Insert", notes = "결재등록")
 	@PostMapping(value = "/insert-approved")

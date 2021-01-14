@@ -38,7 +38,6 @@ import { Dictionary } from 'vue-router/types/router'
 import { Form as ElForm, Input } from 'element-ui'
 import { UserStoreModule } from '@/store/modules/user/store'
 import { isValidUsername } from '@/utils/validate'
-import VersionPopup from './VersionPopup.vue'
 
 @Component({
   name: 'Login',

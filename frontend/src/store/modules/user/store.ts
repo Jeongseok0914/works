@@ -52,7 +52,7 @@ class UserStore extends VuexModule implements UserStoreState {
 
   @Action({ rawError: true })
   public async Logout() {
-    await logout({ title: '로그아웃' })
+    // await logout({ title: '로그아웃' })
     localStorage.removeItem('token')
   }
 

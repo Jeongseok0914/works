@@ -6,13 +6,13 @@ public class ApprovedVo extends BaseVo {
 	
 	private static final long serialVersionUID = 1L;
 	
+	private int idx;
+	
 	private String title;
 	
 	private String content;
 	
 	private String status;
-	
-	private String delYn;
 	
 	private String approvedUserId;
 	
@@ -23,6 +23,15 @@ public class ApprovedVo extends BaseVo {
 	private String sysUpdtDate;
 
 	private String sysUpdtUserId;
+	
+
+	public int getIdx() {
+		return idx;
+	}
+
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
 
 	public String getTitle() {
 		return title;
@@ -46,14 +55,6 @@ public class ApprovedVo extends BaseVo {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public String getDelYn() {
-		return delYn;
-	}
-
-	public void setDelYn(String delYn) {
-		this.delYn = delYn;
 	}
 
 	public String getApprovedUserId() {

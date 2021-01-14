@@ -9,7 +9,7 @@
         <h6>관리자에게 문의 하세요.</h6>
       </el-col>
       <el-col :span="12">
-        <img :src="errGif" class="some-gif" width="313" height="428" alt="Girl has dropped her ice cream." />
+        <!-- <img :src="errGif" class="some-gif" width="313" height="428" alt="Girl has dropped her ice cream." /> -->
       </el-col>
     </el-row>
     <el-dialog :visible.sync="dialogVisible" title="随便看">
@@ -20,13 +20,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import errGif from '@/assets/401-images/401.gif'
+// import errGif from '@/assets/401-images/401.gif'
 
 @Component({
   name: 'Page401'
 })
 export default class extends Vue {
-  private errGif = errGif + '?' + +new Date()
+  // private errGif = errGif + '?' + +new Date()
   private ewizardClap = 'https://wpimg.wallstcn.com/007ef517-bafd-4066-aae4-6883632d9646'
   private dialogVisible = false
 }

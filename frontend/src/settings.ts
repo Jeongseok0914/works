@@ -13,7 +13,7 @@ interface ISettings {
 
 // You can customize below settings :)
 const settings: ISettings = {
-  title: 'MEDILNIX',
+  title: 'Jeongseok',
   showSettings: true,
   showTagsView: false,
   fixedHeader: false,

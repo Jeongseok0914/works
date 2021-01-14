@@ -1,39 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jeongseok.demoweb.dao.approved.ApprovedDao">
-	<resultMap id="approvedMap" type="com.jeongseok.demoweb.vo.approved.ApprovedVo">
-		<result property="title" column="title"/>
-		<result property="content" column="content"/>
-		<result property="status" column="status"/>
-		<result property="delYn" column="del_yn"/>
-		<result property="approvedUserId" column="approved_user_id"/>
-		<result property="sysCretDate" column="sys_cret_date"/>
-		<result property="sysCretUserId" column="sys_cret_user_id"/>
-		<result property="sysUpdtDate" column="sys_updt_date"/>
-		<result property="sysUpdtUserId" column="sys_updt_user_id"/>
-    </resultMap>
-    
-    <insert id="insertApprovedInfo" parameterType="com.jeongseok.demoweb.controller.approved.ApprovedParam">
-    	INSERT INTO approved_info(
-    		title
-    		, content
-    		, status
-    		, del_yn
-    		, approved_user_id
-    		, sys_cret_date
-    		, sys_cret_user_id
-    		, sys_updt_date
-    		, sys_updt_user_id
-    		) VALUES (
-    		  #{title}
-    		, #{content}
-    		, #{status}
-    		, 'N'
-    		, #{approvedUserId}
-    		, sysdate()
-    		, #{sysCretUserId}
-    		, NULL
-    		, NULL);
-    
-    </insert>
+<mapper
+	namespace="com.jeongseok.demoweb.dao.approved.ApprovedDao">
+	<resultMap id="approvedMap"
+		type="com.jeongseok.demoweb.vo.approved.ApprovedVo">
+		<result property="idx" column="idx" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="status" column="status" />
+		<result property="approvedUserId" column="approved_user_id" />
+		<result property="sysCretDate" column="sys_cret_date" />
+		<result property="sysCretUserId" column="sys_cret_user_id" />
+		<result property="sysUpdtDate" column="sys_updt_date" />
+		<result property="sysUpdtUserId" column="sys_updt_user_id" />
+	</resultMap>
+
+	<sql id="whereQueryCondition">
+		<where>
+			<if test="approvedUserId != null and approvedUserId != ''">
+				and approved_user_id = #{approvedUserId}
+			</if>
+			<if test="sysCretUserId != null and sysCretUserId != ''">
+				and sys_cret_user_id = #{sysCretUserId}
+			</if>
+			<if test="limit gt 0">
+				LIMIT #{start}, #{limit}
+			</if>
+		</where>
+	</sql>
+
+	<sql id="updateQueryCondition">
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="title != null and title != '' ">
+				title = #{title}
+			</if>
+			<if test="content != null and content != '' ">
+				content = #{content}
+			</if>
+			<if test="status != null and status != '' ">
+				content = #{content}
+				,sys_updt_date = sysdate()
+				,sys_updt_user_id = #{sysUpdtUserId}
+			</if>
+		</trim>
+	</sql>
+
+	<select id="selectList"
+		parameterType="com.jeongseok.demoweb.controller.approved.ApprovedParam"
+		resultMap="approvedMap">
+
+		SELECT * FROM approved_info
+		<include refid="whereQueryCondition" />
+
+	</select>
+
+	<insert id="insertApprovedInfo"
+		parameterType="com.jeongseok.demoweb.controller.approved.ApprovedParam">
+
+		INSERT INTO approved_info (
+		title
+		, content
+		, status
+		, del_yn
+		, approved_user_id
+		, sys_cret_date
+		, sys_cret_user_id
+		, sys_updt_date
+		, sys_updt_user_id
+		)
+		VALUES (
+		#{title}
+		, #{content}
+		, #{status}
+		, 'N'
+		, #{approvedUserId}
+		,
+		sysdate()
+		, #{sysCretUserId}
+		, NULL
+		, NULL);
+
+	</insert>
+
+	<update id="updateApprovedInfo"
+		parameterType="com.jeongseok.demoweb.controller.approved.ApprovedParam">
+		UPDATE approved_info
+		<include refid="updateQueryCondition" />
+		where 1=1
+		idx = #{idx}
+	</update>
+	
+	<delete id="deleteApprovedInfo"
+		parameterType="com.jeongseok.demoweb.controller.approved.ApprovedParam">
+		DELETE FROM approved_info
+		where 1=1
+		idx = #{idx}
+		</delete>
 </mapper>

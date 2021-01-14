@@ -1,9 +1,10 @@
 import store from '@/store'
 import { VuexModule, Module, Action, Mutation, getModule } from 'vuex-module-decorators'
 import { ApprovedStoreState } from './type'
-import { insertApproved } from '@/api/approved-api'
+import { selectApproved, insertApproved } from '@/api/approved-api'
 @Module({ dynamic: true, store, name: 'approvedStore', namespaced: true })
 class ApprovedStore extends VuexModule implements ApprovedStoreState {
+  public approvedList = []
   @Mutation
   private SET_CHANGE_VALUE(payload: { key: string; value: any }) {
     const { key, value } = payload
@@ -13,9 +14,19 @@ class ApprovedStore extends VuexModule implements ApprovedStoreState {
   }
 
   @Action({ rawError: true })
+  public async GetApproved() {
+    const { data } = await selectApproved()
+    this.SET_CHANGE_VALUE({ key: 'approvedList', value: data })
+  }
+
+  @Action({ rawError: true })
   public async RegisterApproved(payload) {
-    const { data } = await insertApproved(payload)
-    console.log(data)
+    const { resultCd } = await insertApproved(payload)
+    if (resultCd === 200) {
+      return new Promise(resolve => {
+        resolve(200)
+      })
+    }
   }
 
   @Action({ rawError: true })

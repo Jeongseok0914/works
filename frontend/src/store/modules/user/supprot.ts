@@ -18,7 +18,6 @@ export const convertRouter = (flatRouterList: routerType[]) => {
     if (size(item.children) > 0) {
       const childrenRouterList: RouteConfig[] = []
       item.children.forEach(childrenItem => {
-        console.log(childrenItem)
         const childrenRouterItem = {
           path: childrenItem.path,
           component: routerName[childrenItem.component],
