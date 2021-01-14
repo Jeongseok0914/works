@@ -22,6 +22,7 @@ mvn package
 ## backend run
 ```
 mvn spring-boot:run
+http://localhost:8081
 ```
 
 ## frontend Setup
