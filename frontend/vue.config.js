@@ -6,7 +6,7 @@ const name = 'jeongseok'
 module.exports = {
   transpileDependencies: ['element-ui'],
   publicPath: '/',
-  outputDir: './dist',
+  outputDir: '../backend/src/main/resources/static',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {

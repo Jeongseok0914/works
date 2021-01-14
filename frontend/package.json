@@ -5,8 +5,7 @@
   "author": "KJS",
   "scripts": {
     "start": "vue-cli-service serve",
-    "build:prod": "vue-cli-service build",
-    "build:stag": "vue-cli-service build --mode staging",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "jest --clearCache && vue-cli-service test:unit"
