@@ -61,10 +61,6 @@ public class UserService {
 				return responseBaseVo;	
 			}
 			
-			for(MenuRoleRelVo vo: menuRoleRelList) {
-				System.out.println(vo.getMenuId());
-				
-			}
 			Map<String, Object> menuParamMap = new HashMap<>();
 			menuParamMap.put("menuList", menuRoleRelList);
 			

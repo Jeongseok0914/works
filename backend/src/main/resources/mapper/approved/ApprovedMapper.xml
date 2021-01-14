@@ -60,7 +60,7 @@
 		parameterType="com.jeongseok.demoweb.controller.approved.ApprovedParam">
 
 		INSERT INTO approved_info (
-		title
+		  title
 		, content
 		, status
 		, del_yn
@@ -71,13 +71,12 @@
 		, sys_updt_user_id
 		)
 		VALUES (
-		#{title}
+		  #{title}
 		, #{content}
 		, #{status}
 		, 'N'
 		, #{approvedUserId}
-		,
-		sysdate()
+		, sysdate()
 		, #{sysCretUserId}
 		, NULL
 		, NULL);
