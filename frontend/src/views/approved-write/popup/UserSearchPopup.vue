@@ -2,7 +2,7 @@
   <el-dialog :visible.sync="dialogVisible" title="결재자 검색" :before-close="handleClose" width="550px" top>
     <ValidationObserver ref="approvedForm" tag="form">
       <el-form label-width="70px">
-        <ValidationProvider name="결재자" rules="required">
+        <ValidationProvider name="결재자">
           <el-form-item slot-scope="{ errors }" :error="errors[0]" label="결재자">
             <el-input v-model="name" style="width:220px; margin-right:10px;" />
             <el-button @click.native="searchUser()" icon="el-icon-search">검색</el-button>
